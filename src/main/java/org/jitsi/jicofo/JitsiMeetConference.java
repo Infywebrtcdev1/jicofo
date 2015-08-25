@@ -1397,6 +1397,8 @@ public class JitsiMeetConference
         
         for (Participant peerToNotify : participants)
         {
+            participants.get(participants.indexOf(peerToNotify)).setJabberid(
+                peerToNotify.getChatMember().getJabberID());
             JingleSession jingleSessionToNotify
                     = peerToNotify.getJingleSession();
             if (jingleSessionToNotify == null)
